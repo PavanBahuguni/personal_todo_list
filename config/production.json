@@ -1,8 +1,8 @@
 {
-	"dbURL":"mongodb://rootuser:root8593pavan@ds061974.mlab.com:61974/private_todo",
+	"dbURL":"",
 	"facebook":{
-		"appId":"1770598466544322",
-		"appSecret":"00591b3ec00a045dfd9f7f5432beac0b",
+		"appId":"",
+		"appSecret":"",
 		"callBackURL":"https://todo-tasks.herokuapp.com/auth/facebook/callback"
 	},
 	"sessionSecret":"abcdefghijkl"
