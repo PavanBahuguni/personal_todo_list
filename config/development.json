@@ -1,0 +1,10 @@
+{
+	"dbURL":"mongodb://rootuser:root8593pavan@ds061974.mlab.com:61974/private_todo",
+	"facebook":{
+		"appId":"1770598466544322",
+		"appSecret":"00591b3ec00a045dfd9f7f5432beac0b",
+		"callBackURL":"http://localhost:3000/auth/facebook/callback"
+	},
+	"sessionSecret":"abcdefghijkl"
+	
+}

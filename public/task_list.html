@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-app="todoMean">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+	<title>Todo App Using MEAN</title>
+	
+	<!-- Loading necessary css and js modules-->
+	<!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<!-- load jquery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<!-- load angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="./js/core.js"></script>
+	<style>
+        html{ 
+			overflow-y:scroll; 
+		}
+        body{ 
+			padding-top:0px; 
+		}
+        #todo-list{ 
+			margin-bottom:30px; 
+		}
+    </style>
+	
+	<body ng-controller="appController">
+		<div class=row>
+			<nav class="navbar navbar-dark bg-inverse" style="background-color:black;">
+				<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="#"> <img src="{{userDp}}" width="50" height="50" alt="">
+					<span style="color:white;">
+						<b>{{userName}}</b>
+					</span>
+  				</a>
+			</nav>
+		</div>		
+		
+		<div class="container">
+			
+			<div class="jumbotron text-center">
+				<h2>YOU HAVE
+					{{tasks.length}}
+					UNFINISHED TASKS
+				</h2>
+			</div>
+			<div id="todo-form" class="row">
+            	<div class="col-sm-8 col-sm-offset-2 text-center">
+                	<form>
+                    	<div class="form-group"> 
+                        	<input type="text" class="form-control input-lg text-center" placeholder="Enter a task to be done!!" ng-model="formData.text">
+                    	</div>
+                    	<button type="submit" class="btn btn-primary btn-lg" ng-click="createTask()">Add</button>
+                	</form>
+            	</div>
+			</div>
+			<div id="tasks-list" class="row">
+				<div class="col-sm-4 col-sm-offset-4">
+					<div class="checkbox" ng-repeat="task in tasks">
+						<label>
+							<h3>
+								<input type="checkbox" ng-click="deleteTasks(task._id)">{{task.task}}
+							</h3>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
