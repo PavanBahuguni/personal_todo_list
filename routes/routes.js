@@ -55,7 +55,10 @@ module.exports=function(app, express, passport, listUser, mongoose){
 	router.get('/tasks', securePages, function(req, res){
 		res.sendfile('./public/task_list.html');	
 	});	
-	
+	router.get('/logout',function(req, res, next){
+		req.logout();
+		res.redirect('/');
+	});
 	router.get('/auth/facebook', passport.authenticate('facebook', { scope : ['email']} ));
 	router.get('/auth/facebook/callback', passport.authenticate('facebook',{
 		successRedirect: '/tasks',
@@ -64,7 +67,7 @@ module.exports=function(app, express, passport, listUser, mongoose){
 	}))
 	
 	app.use('/', router);
-	
+
 	function getJSON(arrayID,arrayText) {    
     	var JSON = "[";
     	//should arrayID length equal arrayText lenght and both against null
