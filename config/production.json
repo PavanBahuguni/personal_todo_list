@@ -3,7 +3,7 @@
 	"facebook":{
 		"appId":"1770598466544322",
 		"appSecret":"00591b3ec00a045dfd9f7f5432beac0b",
-		"callBackURL":"https://todo-tasks.herokuapp.com/auth/facebook"
+		"callBackURL":"https://todo-tasks.herokuapp.com/auth/facebook/callback"
 	},
 	"sessionSecret":"abcdefghijkl"
 	
